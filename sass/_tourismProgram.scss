@@ -1,0 +1,121 @@
+p{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: $line_height ;
+
+    &:not([class]){
+        line-height: $line_height ;
+        margin-top:  1em;
+        margin-bottom: 0;
+    }
+
+    &:first-child{
+        margin-top: 0;
+    }
+    &:last-child{
+        margin-top: 0;
+    }
+}
+
+
+.program{
+    max-width: 90rem;
+    width: 80vw;
+    
+    margin:0 auto;
+    
+
+}
+
+  
+.station{
+    margin-inline-start: -3px;//!rtl
+}
+
+.stations{
+
+    border-left:  3px solid var(--secondaryColor); //! rtl --
+    padding-top: 4px;
+   
+
+    .station{
+        //transform: translateX(25px);
+        .station__header{
+            margin-bottom: 1.25rem;
+            color :$SecondaryColor;
+            background-color: var(--secondaryColor);
+            font-size: .75rem;
+            font-weight: 400;
+            padding: .5rem 1.5rem; 
+
+
+        }
+
+        .station_cards{
+            display: grid;
+            grid-row-gap: 1.5rem;
+            overflow: hidden;
+            
+            margin-top: 2.5rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+
+            .station__card{
+                position: relative;
+                margin-left: 1rem; //! rtl
+                padding: 1.5rem 1.5rem 1.25rem; 
+                border-radius: 2px;
+                border-left:  2px solidvar(--secondaryColor); //! rtl
+                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24);
+                background-color:  $white;
+
+                &::before{
+                    content: "";
+                    width: 100%;
+                    height:  2px;
+                    background-color:var(--secondaryColor) ;
+                  
+                    position: absolute;
+                    top: 1rem;
+                    left: -50%; //!rtl
+                    z-index: -1;
+                }
+                &[dir="rtl"] {
+                    margin-left: 0;
+                    margin-right: 1rem;
+                    border-left: none ;
+                    border-right:  2px solid var(--secondaryColor) ;
+                    
+                }
+                &[dir="rtl"]::before {
+                    left:0;
+                    right:-50%;
+                    
+                }
+                header{
+                        padding: .25rem 1.25rem .25rem;
+                        background-color:  $SecondaryColor;
+                        font-size:  .75rem;
+                        font-weight:  700;
+                        text-transform:  uppercase;
+                       
+                }
+                
+                .card__content{
+                    margin-top:  .5rem;
+                }
+            }
+
+        }
+    }
+    &[dir="rtl"] {
+
+        border-left: none;
+        border-right:  3px solid var(--secondaryColor); //! rtl
+    }
+    
+}
+
+.scale-up-top{animation:slide-top .5s cubic-bezier(.25,.46,.45,.94) both};
+
+@keyframes slide-top{0%{transform:translateY(0)}100%{transform:translateY(-50px)}};

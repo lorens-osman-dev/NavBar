@@ -1,0 +1,74 @@
+.wrapper{
+    text-align:center;
+    margin:50px auto;
+
+
+    //-Clouds 
+    .clouds{
+        .cloud1{
+            position: absolute;
+            top: 90px;
+            left: 80px;
+            width: 150px;
+            height: 60px;
+        }
+        .cloud2{
+            position: absolute;
+            top: 50px;
+            left: 125px;
+            width: 200px;
+            height: 110px;
+            z-index: 15;//يجب أن تكون أكبر من السيليكتور
+        }
+
+    }
+    //-Navbar
+    .tabs{
+        height: 50px;
+        width: 80vw;
+        max-width: 90rem;
+        margin-top:50px;
+        
+        background: #ececec;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 0 1px 2px 0 rgba(0, 0, 0, .24);
+        display:inline-block;
+        border-radius:2px;
+        position:relative;//يستعملها البالون مرجع بموقعه
+        display: grid;
+        grid-template-columns: repeat(5 , 1fr);
+        align-content: center;
+        //transition-duration:1.5s;// البالون عند الريسايز عبضيع بسبب التأحير
+        //*Glass effect  background: #ececec;  border: 1px solid white;
+        a{
+            color: #202124;
+            font-family: var(--enFont1);
+            font-size: 1.4rem ;
+            font-weight: 400;
+            text-decoration:none;
+            transition-duration:0.6s;
+            display: grid;
+            align-items: center;
+            height: 50px;
+            &:hover{
+               // background-color: red;
+            }
+            .active{
+                color:var(--secondaryColor)
+            }
+        }
+      
+    }
+    //-Selector
+    .selector{
+        position:absolute;
+        display:inline-block;
+        max-width: 100px;
+        max-height: 100px;
+        height: 100px;
+        width: 100px;
+        top:-95px ; //يجب ضبطها بالجافاسيكربت 
+        z-index: 10;//يجب أن تكون أقل من الغيمة الثانية
+    } 
+
+}
+
